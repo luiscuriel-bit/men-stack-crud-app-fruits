@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= fruit.name %>
+    </title>
+</head>
+
+<body>
+    <a href="/fruits">Back to fruits</a>
+    <h1>Here is your fruit</h1>
+    <p>The fruit is a <span>
+            <%= fruit.name %>
+        </span></p>
+    <p>
+        <%= fruit.isReadyToEat? `The ${fruit.name} is super fresh and ready` : "The fruit is not ready" %>
+    </p>
+
+    <form action="/fruits/<%= fruit._id %>?_method=DELETE" method="post">
+        <button type="submit">Delete</button>
+    </form>
+
+    <a href="/fruits/<%= fruit._id %>/edit"><button>Edit</button></a>
+</body>
+
+</html>
